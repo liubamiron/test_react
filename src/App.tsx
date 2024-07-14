@@ -69,6 +69,10 @@ export type CartItemType = {
     count: number;
 }
 
+type ProductsQuantity = {
+    [key: string]: number;
+}
+
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#777777',
     ...theme.typography.body2,
@@ -80,7 +84,7 @@ const Item = styled(Paper)(({ theme }) => ({
 function App() {
     const [phone, setPhone] = useState<string>('');
     const [cartItems, setCartItems] = useState([] as CartItemType[]);
-    const [productsQuantity, setProductsQuantity] = useState({});
+    const [productsQuantity, setProductsQuantity] = useState<ProductsQuantity>({});
 
     const handleChange = (value: string) => {
         setPhone(value);
@@ -177,8 +181,7 @@ function App() {
                                         X {product.count}
                                     </Grid>
                                     <Grid item xs={2} sm={2}>
-                                        {product.price * product.count}
-                                    </Grid>
+                                    {parseFloat(product.price) * product.count}                                    </Grid>
                                 </Grid>
                             ))}
                         </Grid>
