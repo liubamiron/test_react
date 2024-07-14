@@ -1,5 +1,5 @@
 import './App.css';
-import { Button, CardContent, CardMedia, Container, Grid, Typography } from "@mui/material";
+import { Button, CardContent, Container, Grid, Typography } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import PhoneInput from 'react-phone-input-2';
@@ -216,12 +216,7 @@ function App() {
                             justifyContent: 'space-between',
                             height: '100%',
                         }}>
-                            <CardMedia
-                                component="img"
-                                image="../public/chimp_1.webp"
-                                alt="chimp"
-                                width={281}
-                            />
+                            <img src="/chimp_1.webp" alt="Chimp" width={281}/>
                             <Typography variant="h4" gutterBottom>
                                 {product.name}
                             </Typography>
